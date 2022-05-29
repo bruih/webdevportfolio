@@ -1,0 +1,735 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  
+}
+
+body {
+  background-color: lightgrey;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+}
+
+section { /*spacing of the sections*/
+  padding: 3rem 18rem;
+}
+
+.container { /*page sections, hide any unselected sections*/
+  display: none;
+} 
+a:link{ /*disables all underline in hyperlinks*/
+  text-decoration: none!important;
+}
+.active { /*display section page */
+  display: block;
+  animation: appear 1s ease-in-out;
+}
+@keyframes appear { /*animation whenever page is started/clicked*/
+  0% {
+    transform: translateY(-100%) scaleY(0);
+  }
+}
+
+.navibar {
+  position: fixed;
+  top: 50%;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-70%); /*Y position of the navbar*/
+}
+.navibar .control {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 0.7rem;
+}
+.navibar .active-btn {
+  background-color: #0299CC;
+  transition: all 0.4s ease-in-out;
+}
+
+/*mainHeader*/
+.mainHeader {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /*divide columns by left and right header, with the fraction of available space*/
+  min-height: 100vh; /*relative height of display screen*/
+}
+.mainHeader .header-one {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+  .squareBG {
+  width: 65%;
+  height: 100%;
+  background-color: #0299CC;
+  position: absolute;
+  z-index: -1; /*display blue bar at the back*/
+ 
+}
+
+/*container + image position*/
+.mainHeader .image {
+  height: 70%;
+  width: 58%;
+  margin-left: 12rem; 
+}
+/*container + image position(for scaling)*/
+.mainHeader .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.mainHeader .header-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20rem;
+}
+.mainHeader .header-two .name {
+  font-size: 3rem;
+}
+.mainHeader .header-two .name span {
+  color: #0299CC;
+}
+.mainHeader .header-two p {
+  margin: 1.5rem 0;
+  line-height: 2rem;
+}
+.mainTitle {
+  text-align: center;
+}
+.mainTitle h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+}
+.mainTitle h2 span {
+  color: #0299CC;
+}
+
+.aboutMeContainer .moreInfoMe p {
+  padding-left: 0;
+}
+/*About*/
+.four-boxes {
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+}
+ .four-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+ .aboutContents {
+  border: 1px solid grey;
+  transition: all 0.4s ease-in-out;
+}
+
+ .aboutContents:hover {
+  border: 1px solid #0299CC;
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.32); 
+}
+ .boxTexts {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+ .headerText {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0299CC;
+}
+ .desc {
+  padding-left: 3.5rem;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+}
+ .moreInfoMe p {
+  line-height: 2rem;
+  padding: 1rem;
+}
+ .moreInfoMe h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.SkillSection {
+  padding-bottom: 5rem;
+}
+ .skillBarContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+ .skillbars {
+  display: flex;
+  flex-direction: column;
+}
+ .skillTitle {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+ .skillbar {
+  display: flex;
+  align-items: center;
+}
+
+ .progress {
+  width: 100%;
+  height: 0.45rem;
+  background-color: grey;
+  margin-left: 1rem;
+  position: relative;
+}
+ .progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #0299CC;
+  transition: all 0.4s ease-in-out;
+  width: 60%;
+}
+.progress .programming {
+  width: 80%;
+}
+.progress .multitask {
+  width: 95%;
+}
+.progress .videoedit {
+  width: 75%;
+}
+.progress.problemsolve {
+  width: 60%;
+}
+.progress.videogame {
+  width: 87%;
+}
+ .progress .timemng {
+  width: 70%;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 3.5rem 0;
+  position: relative;
+}
+.title::before { /*display this block of code first*/
+  content: ""; /*lines seperating each content*/
+  position: absolute; /*for some reason the line doesnt show if this is not applied*/
+  left: 50%; /*-50+50 = 0 pos = center*/
+  top: 0;
+  width: 40%;
+  height: 1px;
+  background-color: grey;
+  transform: translateX(-50%); /*x pos of line*/
+}
+
+/*=======================================HOBBY SECTION=============================================*/
+.hobbyContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+
+}
+ .hobbyItems {
+  position: relative;
+  padding-left: 3rem;
+  border-left: 1px solid grey;
+}
+ .show-icon {
+  position: absolute;
+  left: -29px;
+  background-color: #0299CC;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hobbyItems h5 {
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+ .hobbyItems h5 span {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+/*=======================================PROJECTS SECTION=============================================*/
+.shortDesc {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+ .projects {
+  position: relative;
+  border-radius: 15px;
+}
+ .projects img {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+}
+.hovering {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.hovering h3 {
+  font-size: 1.5rem;
+  color: #9A9B9C;
+  margin-bottom: 1.5rem;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+ .icon {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.ikun i{
+  margin: 3px;
+}
+ .icon i {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0 1rem;
+}
+.icon:hover {
+  background-color: white;
+}
+ .icon:hover i {
+  color: black
+}
+
+.projects:hover .hovering {
+  opacity: 0.8;
+  transform: scale(1);
+}
+
+/*=======================================GALLERY SECTION=============================================*/
+.galleria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+
+ .galleries:hover .galleryTexts {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  transition: .8s;
+  transform: translateY(0px);
+  opacity: 1;
+}
+ .galleries img {
+  width: 100%;
+  height: 300px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.galleryTexts{
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: .8s;
+    margin-top: -7px;
+    padding: 1.1rem;
+  background-color: grey;
+}
+
+
+/*=======================================CONtaCT SECTION=============================================*/
+.butan {
+  min-width: 193px;
+  height: 50px;
+  border-radius: 25px;
+  background: grey;
+  font-size: 15px;
+  line-height: 1.5;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+  padding: 0;
+border: none;
+}
+
+
+
+.butan i { /*arrow in the button*/
+  margin-left: 7px;
+  transition: all 0.4s;
+}
+
+.butan:hover {
+  background: #2196F3;
+}
+
+.butan:hover i { /*animation for the arrow when hover*/
+  transform: translateX(10px);
+}
+
+.sendMailBtn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mainContactContainer {
+  display: flex;
+  padding-top: 3.5rem;
+}
+ .contact-01 {
+  flex: 2;
+}
+ .contact-01 h4 {
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+ .contact-01 p {
+  margin: 1rem 0;
+  line-height: 2rem;
+}
+ .info .contacts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+ .socials {
+  display: flex;
+  margin-top: 2rem;
+}
+ .socials a {
+  display: flex;
+  align-items: center;
+  color: lightgrey;
+  background-color: grey;
+  cursor: pointer;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 0.4rem;
+  transition: all 0.4s ease-in-out;
+}
+ .socials a:hover {
+  background-color: #0299CC;
+  transition: all 0.4s ease-in-out;
+}
+ .socials a:hover i {
+  color:white;
+  transition: all 0.4s ease-in-out;
+}
+.socials a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all 0.4s ease-in-out;
+}
+ .contact-02 {
+  flex: 3;
+  margin-left: 3rem;
+}
+ .input-control {
+  margin: 1.5rem 0;
+}
+.input-control input,textarea {
+  border-radius: 30px;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.8rem 1.1rem;
+  outline: none;
+  border: none;
+  background-color: grey;
+  width: 100%;
+  resize: none;
+}
+ .contact-02 .main {
+  display: flex;
+}
+.contact-02 .main :last-child {
+  margin-left: 1.5rem;
+}
+ .contact-02  {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+
+/*responsitivity of the webpage*/
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0 !important;
+  }
+  .mainHeader {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+  }
+  .header-one .squareBG {
+    display: none;
+  }
+  .header-two {
+    grid-row: 1;
+    padding-right: 0rem !important;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .header-two .name {
+    font-size: 2.5rem !important;
+    text-align: center;
+    padding-top: 3rem;
+  }
+  .mainHeader .header-one .image {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .navibar {
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: grey;
+  }
+  .navibar .control {
+    margin: 1rem 0.3rem;
+  }
+  .aboutMeContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .aboutMeContainer .four-boxes {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 2.5rem;
+  }
+  .aboutMeContainer .moreInfoMe {
+    padding-right: 0;
+  }
+  .aboutMeContainer .moreInfoMe p {
+    padding-left: 0;
+  }
+  .hobbyContainer {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+  }
+  .container {
+    padding: 2rem 2.5rem !important;
+  }
+  .SkillSection .skillBarContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .projectList {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+    margin-top: 1rem;
+  }
+  .galleria {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+  }
+  .mainContactContainer {
+    flex-direction: column;
+  }
+ .contact-02 {
+    margin-left: 0;
+    margin-top: 2.5rem;
+  }
+  .contact-02 .main {
+    flex-direction: column;
+  }
+  .main :last-child {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+  .contact-02 {
+    margin-bottom: 6rem;
+  }
+  .contacts {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .contacts p {
+    font-size: 15px;
+    color: var(--color-grey-2);
+  }
+  .contacts span {
+    font-size: 15px;
+  }
+  .contacts .icon {
+    grid-template-columns: 25px 1fr;
+  }
+  .mainTitle h2 {
+    font-size: 2rem;
+  }
+  .mainTitle h2 span {
+    font-size: 2.3rem;
+  }
+  .mainTitle h2  {
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 1432px) {
+  .container {
+    padding: 7rem 11rem;
+  }
+  .mainContactContainer {
+    flex-direction: column;
+  }
+  .contact-02 {
+    margin-left: 0;
+    margin-top: 2.5rem;
+  }
+   .contact-02 .main {
+    flex-direction: column;
+  }
+ .contact-02 .main :last-child {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+  .mainTitle h2  {
+    font-size: 5.5rem;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .galleria {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 6rem;
+  }
+  .projectList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mainHeader .header-two {
+    padding-right: 9rem;
+  }
+}
+@media screen and (max-width: 660px) {
+  .galleria {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .projectList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 1070px) {
+  .aboutMeContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .aboutMeContainer .four-boxes {
+    padding-top: 2.5rem;
+  }
+  .mainTitle h2 {
+    font-size: 4rem;
+  }
+  .mainTitle h2 span {
+    font-size: 4rem;
+  }
+  .mainTitle h2  {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  .container {
+    padding: 7rem 6rem;
+  }
+  .aboutMeContainer .moreInfoMe {
+    padding-right: 0rem;
+  }
+  .mainHeader {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+  }
+  .header-one .squareBG {
+    display: none;
+  }
+  .header-one .image {
+    
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+  .header-two {
+    grid-row: 1;
+    padding-right: 0rem !important;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .header-two .name {
+    font-size: 2.5rem !important;
+    text-align: center;
+    padding-top: 3rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .container {
+    padding: 7rem 3rem;
+  }
+  .SkillSection .skillBarContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .aboutMeContainer .four-boxes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .hobbyContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .mainTitle h2 {
+    font-size: 3rem;
+  }
+  .mainTitle h2 span {
+    font-size: 3rem;
+  }
+  .mainTitle h2  {
+    font-size: 4rem;
+  }
+}
+
