@@ -202,22 +202,22 @@ a:link{ /*disables all underline in hyperlinks*/
   width: 60%;
 }
 .progress .programming {
-  width: 80%;
+  width: 70%;
 }
 .progress .multitask {
   width: 95%;
 }
 .progress .videoedit {
-  width: 75%;
-}
-.progress.problemsolve {
   width: 60%;
 }
-.progress.videogame {
-  width: 87%;
+.progress .problemsolve {
+  width: 75%;
+}
+.progress .videogame {
+  width: 90%;
 }
  .progress .timemng {
-  width: 70%;
+  width: 80%;
 }
 
 .title {
